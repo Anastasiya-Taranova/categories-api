@@ -1,19 +1,25 @@
 from rest_framework import serializers
 
 from applications.categories.models import Category
-from applications.categories.serializers.sub_category_serializer import SubCategorySerializer
+from applications.categories.serializers.sub_category_serializer import \
+    SubCategorySerializer
 
 
 class CategorySerializer(serializers.ModelSerializer):
 
-    children = serializers.SerializerMethodField('get_children')
-    parents = serializers.SerializerMethodField('get_parents')
-    siblings = serializers.SerializerMethodField('get_siblings')
+    children = serializers.SerializerMethodField("get_children")
+    parents = serializers.SerializerMethodField("get_parents")
+    siblings = serializers.SerializerMethodField("get_siblings")
 
     class Meta:
         model = Category
-        fields = ('id', 'name', 'children', 'parents', 'siblings',)
-
+        fields = (
+            "id",
+            "name",
+            "children",
+            "parents",
+            "siblings",
+        )
 
     def get_children(self, obj):
         children = obj.get_children()

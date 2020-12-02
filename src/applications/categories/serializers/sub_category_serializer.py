@@ -6,8 +6,13 @@ from applications.categories.models import Category
 
 class SubCategorySerializer(serializers.ModelSerializer):
 
-    name = serializers.StringRelatedField(validators=[UniqueValidator(queryset=Category.objects.all())])
+    name = serializers.StringRelatedField(
+        validators=[UniqueValidator(queryset=Category.objects.all())]
+    )
 
     class Meta:
         model = Category
-        fields = ('id', 'name',)
+        fields = (
+            "id",
+            "name",
+        )

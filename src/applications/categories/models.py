@@ -3,12 +3,18 @@ from django.db import models
 
 class Category(models.Model):
     name = models.TextField(unique=True)
-    parent = models.ForeignKey("Category", related_name="children", on_delete=models.CASCADE, null=True, blank=True)
+    parent = models.ForeignKey(
+        "Category",
+        related_name="children",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+    )
 
     @staticmethod
     def dump_data(category, parent=None):
-        name = category.get('name')
-        children = category.get('children')
+        name = category.get("name")
+        children = category.get("children")
 
         if parent:
             parent = Category.objects.create(name=name, parent=parent)

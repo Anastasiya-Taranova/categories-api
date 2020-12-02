@@ -2,7 +2,8 @@ from rest_framework import generics, status
 from rest_framework.response import Response
 
 from applications.categories.models import Category
-from applications.categories.serializers.category_serializer import CategorySerializer
+from applications.categories.serializers.category_serializer import \
+    CategorySerializer
 
 
 class CategoryListCreateAPIView(generics.ListCreateAPIView):
