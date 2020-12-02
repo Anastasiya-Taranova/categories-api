@@ -1,3 +1,4 @@
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 # Categories API
 
 A simple Categories API that stores category tree to database and returns category parents, children and siblings by category id.
