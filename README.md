@@ -11,5 +11,5 @@ Create a simple Categories API that stores category tree to database and returns
 POST /categories/ 
 </code> <br>
 <code>
-GET /categories/<id>/  
+GET /categories/id/
 </code>
