@@ -1,0 +1,12 @@
+default:
+  SECRET_KEY: ""
+  DEBUG: true
+  ALLOWED_HOSTS: []
+  DATABASE_URL: ""
+  SITE_ID: 0
+  TIME_ZONE: ""
+
+development:
+  SITE_ID: 1
+  TIME_ZONE: "Europe/Minsk"
+  DEBUG: true
